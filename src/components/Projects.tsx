@@ -1,5 +1,5 @@
 import uniqid from 'uniqid';
-import placeholder from '../images/project_image.png';
+import placeholder from '../assets/images/project_image.png';
 
 interface ProjectsProps {
     src: string;
