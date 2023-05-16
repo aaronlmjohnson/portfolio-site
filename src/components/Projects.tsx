@@ -1,14 +1,16 @@
 import uniqid from 'uniqid';
 
 interface ProjectsProps {
+    name: string;
+    links: any;
     src: string;
     description: string;
 }
 
-const ProjectDiv = ({src, description}: ProjectsProps)=>{
+const ProjectDiv = ({name, links, src, description}: ProjectsProps)=>{
     return (
         <div className="project" key={uniqid()}>
-            {/* MAKE SURE TO ADD PROJECT NAME HERE AND IN JSON */}            
+            <h1>{name}</h1>          
             <img className="project-preview" alt ="#"src={src} width="800px"></img>
             <p className="project-description">
                 {description}
@@ -24,8 +26,11 @@ const Projects = (props: any)=>{
             {
                 props.projectData.map((project: any, i: number)=>{
                     return <ProjectDiv 
+                            name={project.name}
+                            links={project.links}
                             src={project.src} 
-                            description = {project.description} 
+                            description = {project.description}
+
                             />
                 })
             }
