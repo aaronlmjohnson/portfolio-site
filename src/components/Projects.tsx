@@ -22,6 +22,7 @@ const ProjectDiv = ({src, description}: ProjectsProps)=>{
 const Projects = (props: any)=>{
     return (
         <div id="projects">
+            <h1>Projects</h1>
             {
                 [1, 2, 3].map((project: any, i: number)=>{
                     return <ProjectDiv 

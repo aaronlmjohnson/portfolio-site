@@ -4,17 +4,21 @@ const Contact = ()=>{
     const contents: string[] = ['first name', 'last name', 'email', 'comments'];
     
     return (
-    <form>
-        <div>
-            {
-            contents.map((item, i)=> 
-                <FormInput 
-                    type={i === contents.length - 1 ? 'textarea' : 'text'} 
-                    name={item} 
-                />)
-            }   
-        </div>
-    </form>
+    <div id="contact">
+        <h1>Contact</h1>
+        <form>
+            <div>
+                {
+                contents.map((item, i)=> 
+                    <FormInput 
+                        type={i === contents.length - 1 ? 'textarea' : 'text'} 
+                        name={item} 
+                    />)
+                }   
+            </div>
+        </form>
+    </div>
+    
     );
 }
 

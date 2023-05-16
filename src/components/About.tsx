@@ -1,6 +1,7 @@
 const About = ()=>{
     return (
-        <div>
+        <div id="about">
+            <h1>About</h1>
             <img src="#" id="about-image"></img>
             <div id="about-me-text">
                 <p>
