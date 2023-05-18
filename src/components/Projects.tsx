@@ -7,7 +7,33 @@ interface ProjectsProps {
     description: string;
 }
 
+interface ProjectLinkProps {
+    siteName: string;
+    link: string;
+}
+const ProjectLink = ({siteName, link}: ProjectLinkProps)=>{
+    return (
+        <li key={uniqid()}>
+            <a target="_blank" rel= "noopener noreferrer" href={link}> {siteName} </a>
+        </li>
+    )
+}
+const ProjectLinks = (props: any)=>{
+    const links = props.links;
+    console.log(links);
+    return (
+        <ul className="project-links"> 
+            {
+                Object.keys(links).map((key)=> 
+                    <ProjectLink siteName ={key} link={links[key]}/>)
+            }
+        </ul>
+    )
+}
+
+
 const ProjectDiv = ({name, links, src, description}: ProjectsProps)=>{
+    console.log(links);
     return (
         <div className="project" key={uniqid()}>
             <h1>{name}</h1>          
@@ -15,6 +41,7 @@ const ProjectDiv = ({name, links, src, description}: ProjectsProps)=>{
             <p className="project-description">
                 {description}
             </p>
+            <ProjectLinks links={links}/>
         </div>
     )
 }
