@@ -11,6 +11,7 @@ interface ProjectLinkProps {
     siteName: string;
     link: string;
 }
+
 const ProjectLink = ({siteName, link}: ProjectLinkProps)=>{
     return (
         <li key={uniqid()}>
@@ -20,7 +21,6 @@ const ProjectLink = ({siteName, link}: ProjectLinkProps)=>{
 }
 const ProjectLinks = (props: any)=>{
     const links = props.links;
-    console.log(links);
     return (
         <ul className="project-links"> 
             {
@@ -33,7 +33,6 @@ const ProjectLinks = (props: any)=>{
 
 
 const ProjectDiv = ({name, links, src, description}: ProjectsProps)=>{
-    console.log(links);
     return (
         <div className="project" key={uniqid()}>
             <h1>{name}</h1>          
