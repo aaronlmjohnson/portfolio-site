@@ -1,4 +1,6 @@
 import FormInput from "./FormInput";
+import uniqid from 'uniqid';
+
 
 const Contact = ()=>{
     const contents: string[] = ['first name', 'last name', 'email', 'comments'];
@@ -13,6 +15,7 @@ const Contact = ()=>{
                     <FormInput 
                         type={i === contents.length - 1 ? 'textarea' : 'text'} 
                         name={item} 
+                        key={uniqid()}
                     />)
                 }   
             </div>
